@@ -1,4 +1,4 @@
-# <span style="color: brown;"> Gesture Controlled Robot</span>
+<span style="background-color:black"> # <span style="color: brown;"> Gesture Controlled Robot</span>
 
 <span style="color: olive;"> My project is a small car that can be controlled with the movement of your hand. The user wears a glove which senses movement, giving different inputs based on which gesture you make. These inputs move the car in different directions. </span>
 
@@ -99,3 +99,4 @@ One of the best parts about Github is that you can view how other people set up 
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
 To watch the BSE tutorial on how to create a portfolio, click here. -->
+</span>
