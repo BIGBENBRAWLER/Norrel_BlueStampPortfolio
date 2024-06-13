@@ -60,7 +60,7 @@ For your first milestone, describe what your project is and how you plan to buil
 <!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nfM3Oaaae1E" title="Norrel A. Starter Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-My starter project was the calculator. The first challenge I encountered was a lack of instructions, but the build was otherwise straightforward. I also damaged the STC chip during construction, so I had to repair it through soldering. Moving forward, I will use the knowledge and experience in soldering I gained from this project to streamline the making of my main project. 
+My starter project was the calculator. I chose this project as I thought it was a great way to practice soldering and assembly while also being useful. The first challenge I encountered was a lack of instructions, but the build was otherwise straightforward. I also damaged the STC chip during construction, so I had to repair it through soldering a small piece of wire to it. Moving forward, I will use the knowledge and experience in soldering I gained from this project to streamline the making of my main project. 
 
 
 <!--- # Schematics 
