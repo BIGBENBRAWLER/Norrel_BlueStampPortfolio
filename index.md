@@ -1,5 +1,5 @@
 <span style="background-color:black"> 
-# <span style="color: brown;"> Gesture Controlled Robot</span>
+# <span style="color: brown;"> Gesture Controlled Robot </span>
 </span>
 
 <span style="color: olive;"> My project is a small car that can be controlled with the movement of your hand. The user wears a glove which senses movement, giving different inputs based on which gesture you make. These inputs move the car in different directions. </span>
