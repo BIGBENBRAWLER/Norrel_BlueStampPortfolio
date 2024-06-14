@@ -87,8 +87,8 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Arduino UNO | Contains the code for the vehicle | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Arduino Nano R3 | Contains the code for the glove | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Arduino UNO | Contains the code for the vehicle | $29 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Arduino Nano R3 | Contains the code for the glove | $25.10 | <a href="https://www.amazon.com/Arduino-A000005-ARDUINO-Nano/dp/B0097AU5OU/ref=sr_1_3?dib=eyJ2IjoiMSJ9.DuUAPNKOZx3V-ph33HzyN0M-73jcP_H0KcW1aHgUufhQ1KYdLDGa-NFC9DqAKMKBXhyIzngMftHvp0kBuo-NYOnbrtgpFBmZBW_-VRPz5TK1i2y1XPyp4i_CLeZ_SHYukLGyGIhA--MhDtuKa0-ytIkKxs9kwW5bmdW93o9_KWoPshi1meFCONTIBwBengTx1XTSiLjzTx8GnGs0Ez0p3ZzANtbdtbT1Qn2Hl5OHyvk.Z-zVstCWTJN8kdU7cRPxa7Je_gALYjIonkaAI9x956s&dib_tag=se&keywords=arduino+nano+r3&qid=1718407538&sr=8-3"> Link </a> |
 | SparkFun Dual H-Bridge motor drivers L298 | Controls the motors' direction | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Solderless Breadboard Half Size | Base for the glove's electronics | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | HC-05 Bluetooth Module "(x2)" | Transmits signals between the glove and car | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
