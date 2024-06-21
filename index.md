@@ -55,7 +55,7 @@ My starter project was the calculator. I chose this project as I thought it was 
 
 
 # Schematics 
-![image info](./pictures/schematic.png)
+![Headstone Image](logo.svg) 
 <!---
 ```c++
 void setup() {
