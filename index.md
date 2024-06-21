@@ -56,20 +56,9 @@ My starter project was the calculator. I chose this project as I thought it was 
 
 # Schematics 
 ![Headstone Image](schematic.png) 
-<!---
-```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
 
-void loop() {
-  // put your main code here, to run repeatedly:
 
-}
-```
--->
+
 # Bill of Materials
 
 
