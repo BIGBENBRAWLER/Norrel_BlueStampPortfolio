@@ -5,9 +5,6 @@
 
 <!---Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!-->
 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -17,18 +14,16 @@
 
 ![Headstone Image](logo.svg) 
 -->
-<!---# Final Milestone
+# Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5ZlQGLkiJnY" title="Norrel A. Final Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
+For my final milestone, I fastened the top acrylic plate onto the chassis to protect the car's internal components. I used Velcro and hot glue to secure the H-bridge motor driver and Arduino UNO microcontroller to the car. I used tape to hold the battery and Bluetooth module in place. To complete my milestone, I made a bracelet out of a Velcro strap and taped my controller onto it. 
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE
--->
 
 
 # Second Milestone
@@ -45,13 +40,6 @@ For my second milestone, I've written the code for both the controller and car. 
 
 My project is the Gesture Controlled Robot. I chose this project as its unique method of input piqued my interest. I've finished assembling the hardware for both the car and the glove. I also connected the Bluetooth modules together through following a series of tutorials. The first challenge I encountered was a confusing plethora of tutorials offering me different ways to connect the H-bridge motor driver to the Arduino UNO. I ended up rewiring my setup as I decided to follow the original, long-winded tutorial instead. The second challenge I encountered was a lack of power: I needed to add a second power supply to keep all four DC motors running. When I connected the Bluetooth modules together, I had to stray away from the main tutorial once again. I used this <a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Tutorial </a> here, showing me how to configure each module as a master or slave.
 
-
-# Starter Project Milestone
-
-<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nfM3Oaaae1E" title="Norrel A. Starter Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-My starter project was the calculator. I chose this project as I thought it was a great way to practice soldering and assembly while also being useful. The first challenge I encountered was a lack of instructions, but the build was otherwise straightforward. I also damaged the STC chip during construction, so I had to repair it by soldering a small piece of wire to it. Moving forward, I will use the knowledge and experience I gained from this project to streamline the making of my main project. I highly recommend this starter project to incoming BlueStamp engineers as it nurtures critical thinking and proves an elegant desk piece. 
 
 
 # Schematics 
@@ -71,6 +59,13 @@ My starter project was the calculator. I chose this project as I thought it was 
 | HC-05 Bluetooth Module "(x2)" | Transmits signals between the glove and car | $10.39 | <a href="https://www.amazon.com/HiLetgo-Wireless-Bluetooth-Transceiver-Arduino/dp/B071YJG8DR"> Link </a> |
 | DC Motor, 12 V and Wheels"(x4)" | Moves the vehicle | $10 | <a href="https://www.amazon.com/Gebildet-DC3V-12V-Four-Wheel-Robotic-Aircraft/dp/B08D39MFN1/ref=asc_df_B08D39MFN1/?tag=hyprod-20&linkCode=df0&hvadid=693361699609&hvpos=&hvnetw=g&hvrand=8936357447354879100&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032043&hvtargid=pla-937905506568&mcid=e05d649e88bd3b5e8e847eb902e02f8b&gad_source=1&th=1"> Link </a> |
 | Rocker Switch "(x2)" | Controls the flow of power | $2.75 | <a href="https://www.amazon.com/Switch-Black-Rocker-Rectangular-Opening/dp/B085XD1YQC/ref=asc_df_B085XD1YQC/?tag=hyprod-20&linkCode=df0&hvadid=693270340065&hvpos=&hvnetw=g&hvrand=18279408580620259037&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032043&hvtargid=pla-2202285594162&psc=1&mcid=b63be441320c3457875ee1a1d02757de&gad_source=1"> Link </a> |
+
+# Starter Project Milestone
+
+<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nfM3Oaaae1E" title="Norrel A. Starter Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+My starter project was the calculator. I chose this project as I thought it was a great way to practice soldering and assembly while also being useful. The first challenge I encountered was a lack of instructions, but the build was otherwise straightforward. I also damaged the STC chip during construction, so I had to repair it by soldering a small piece of wire to it. Moving forward, I will use the knowledge and experience I gained from this project to streamline the making of my main project. I highly recommend this starter project to incoming BlueStamp engineers as it nurtures critical thinking and proves an elegant desk piece. 
 
 <!--
 # Other Resources/Examples
