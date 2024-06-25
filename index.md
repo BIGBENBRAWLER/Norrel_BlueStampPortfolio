@@ -18,7 +18,7 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5ZlQGLkiJnY" title="Norrel A. Final Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For my final milestone, I fastened the top acrylic plate onto the chassis to protect the car's internal components. I used Velcro and hot glue to secure the H-bridge motor driver and Arduino UNO microcontroller to the car. I used tape to hold the battery and Bluetooth module in place. To complete my milestone, I made a bracelet out of a Velcro strap and taped my controller onto it. 
+For my final milestone, I fastened the top acrylic plate onto the chassis to protect the car's internal components. I used Velcro and hot glue to secure the H-bridge motor driver and Arduino UNO microcontroller to the car. I used tape to hold the battery and Bluetooth module in place. To complete my milestone, I made a bracelet out of a Velcro strap and taped my controller onto it. My biggest challenge at BSE was learning how to code with no previous experience. I had to (tutorials, find the right one) (pair bluetooth modules, change code for modification)
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
