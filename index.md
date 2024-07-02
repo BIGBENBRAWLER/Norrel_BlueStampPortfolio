@@ -77,10 +77,11 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 -->
 
 # References
+<a href="https://www.hackster.io/embeddedlab786/hand-gesture-control-robot-via-bluetooth-94b13d"> Main Tutorial </a> <br>
+<a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Bluetooth Tutorial </a> <br>
 <a href="https://www.instructables.com/Interfacing-Buzzer-to-Arduino/"> Buzzer Connection Tutorial </a> <br>
 <a href="https://howtomechatronics.com/tutorials/arduino/ultrasonic-sensor-hc-sr04/"> Ultrasonic Sensor Tutorial </a> <br>
-<a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Bluetooth Tutorial </a> <br>
-<a href="https://www.hackster.io/embeddedlab786/hand-gesture-control-robot-via-bluetooth-94b13d"> Main Tutorial </a> <br>
+<a href="https://newbiely.com/tutorials/arduino-nano/arduino-nano-button"> Button Tutorial </a> <br>
 
   
  
