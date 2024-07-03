@@ -31,25 +31,27 @@
 # <center>Second Milestone</center>
 
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/DosaU0uHYiI" title="Norrel A. Second Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+<center><div style="border: 10px groove blue;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DosaU0uHYiI" title="Norrel A. Second Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. The accelorometer now reads the orientation of your hand and sends this data over to the bluetooth module. This data is transported to its counterpart device and read by the Arduino UNO. The code in the microcontroller decides what to do with the inputs it receives. The outputs it sends over to the H-bridge motor driver decides in which direction the wheels spin, and thus, in what direction the car moves. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. 
 
 # <center>First Milestone</center>
 
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/634PnCNzBaU" title="Norrel A. First Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+<center><div style="border: 10px groove blue;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/634PnCNzBaU" title="Norrel A. First Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;My project is the Gesture Controlled Robot. I chose this project as its unique method of input piqued my interest. I've finished assembling the hardware for both the car and the glove. I also connected the Bluetooth modules together through following a series of tutorials. The first challenge I encountered was a confusing plethora of tutorials offering me different ways to connect the H-bridge motor driver to the Arduino UNO. I ended up rewiring my setup as I decided to follow the original, long-winded tutorial instead. The second challenge I encountered was a lack of power: I needed to add a second power supply to keep all four DC motors running. When I connected the Bluetooth modules together, I had to stray away from the main tutorial once again. I used this <a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Tutorial </a> here, showing me how to configure each module as a master or slave.
 
 
 
-# Schematics 
-![Headstone Image](schematic.png) 
+# <center>Schematics</center>
+<center>![Headstone Image](schematic.png) </center>
 
 
 
-# Bill of Materials
+# <center>Bill of Materials</center>
 
 
 | **Part** | **Note** | **Price** | **Link** |
@@ -62,12 +64,13 @@
 | DC Motor, 12 V and Wheels"(x4)" | Moves the vehicle | $10 | <a href="https://www.amazon.com/Gebildet-DC3V-12V-Four-Wheel-Robotic-Aircraft/dp/B08D39MFN1/ref=asc_df_B08D39MFN1/?tag=hyprod-20&linkCode=df0&hvadid=693361699609&hvpos=&hvnetw=g&hvrand=8936357447354879100&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032043&hvtargid=pla-937905506568&mcid=e05d649e88bd3b5e8e847eb902e02f8b&gad_source=1&th=1"> Link </a> |
 | Rocker Switch "(x2)" | Controls the flow of power | $2.75 | <a href="https://www.amazon.com/Switch-Black-Rocker-Rectangular-Opening/dp/B085XD1YQC/ref=asc_df_B085XD1YQC/?tag=hyprod-20&linkCode=df0&hvadid=693270340065&hvpos=&hvnetw=g&hvrand=18279408580620259037&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032043&hvtargid=pla-2202285594162&psc=1&mcid=b63be441320c3457875ee1a1d02757de&gad_source=1"> Link </a> |
 
-# Starter Project Milestone
+# <center>Starter Project Milestone</center> 
 
 <!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nfM3Oaaae1E" title="Norrel A. Starter Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<center><div style="border: 10px groove blue;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nfM3Oaaae1E" title="Norrel A. Starter Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></center> 
 
-My starter project was the calculator. I chose this project as I thought it was a great way to practice soldering and assembly while also being useful. The first challenge I encountered was a lack of instructions, but the build was otherwise straightforward. I also damaged the STC chip during construction, so I had to repair it by soldering a small piece of wire to it. Moving forward, I will use the knowledge and experience I gained from this project to streamline the making of my main project. I highly recommend this starter project to incoming BlueStamp engineers as it nurtures critical thinking and proves an elegant desk piece. 
+&nbsp;&nbsp;&nbsp;&nbsp;My starter project was the calculator. I chose this project as I thought it was a great way to practice soldering and assembly while also being useful. The first challenge I encountered was a lack of instructions, but the build was otherwise straightforward. I also damaged the STC chip during construction, so I had to repair it by soldering a small piece of wire to it. Moving forward, I will use the knowledge and experience I gained from this project to streamline the making of my main project. I highly recommend this starter project to incoming BlueStamp engineers as it nurtures critical thinking and proves an elegant desk piece. 
 
 <!--
 # Other Resources/Examples
@@ -79,12 +82,12 @@ One of the best parts about Github is that you can view how other people set up 
 To watch the BSE tutorial on how to create a portfolio, click here. 
 -->
 
-# References
-<a href="https://www.hackster.io/embeddedlab786/hand-gesture-control-robot-via-bluetooth-94b13d"> Main Tutorial </a> <br>
-<a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Bluetooth Tutorial </a> <br>
-<a href="https://www.instructables.com/Interfacing-Buzzer-to-Arduino/"> Buzzer Connection Tutorial </a> <br>
-<a href="https://howtomechatronics.com/tutorials/arduino/ultrasonic-sensor-hc-sr04/"> Ultrasonic Sensor Tutorial </a> <br>
-<a href="https://newbiely.com/tutorials/arduino-nano/arduino-nano-button"> Button Tutorial </a> <br>
+# <center>References</center>
+<center><a href="https://www.hackster.io/embeddedlab786/hand-gesture-control-robot-via-bluetooth-94b13d"> Main Tutorial </a></center> <br>
+<center><a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Bluetooth Tutorial </a></center> <br>
+<center><a href="https://www.instructables.com/Interfacing-Buzzer-to-Arduino/"> Buzzer Connection Tutorial </a> </center><br>
+<center><a href="https://howtomechatronics.com/tutorials/arduino/ultrasonic-sensor-hc-sr04/"> Ultrasonic Sensor Tutorial </a> </center><br>
+<center><a href="https://newbiely.com/tutorials/arduino-nano/arduino-nano-button"> Button Tutorial </a></center> <br>
 
   
  
