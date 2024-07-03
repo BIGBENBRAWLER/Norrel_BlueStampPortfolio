@@ -47,7 +47,7 @@
 
 
 # <center>Schematics</center>
-<center>![Headstone Image](schematic.png) </center>
+<center><img src="schematic.png" width="700" height="600"> </center>
 
 
 
