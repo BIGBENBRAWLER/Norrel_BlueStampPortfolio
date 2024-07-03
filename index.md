@@ -50,7 +50,7 @@
 <center><img src="schematic.png" width="800" height="600"> </center>
 
 # <center> Full Car Code (with Modifications) </center>
-<pre> <style="background:#fdfdfd; border:none; height:40pc">
+<pre> <div style="background:#fdfdfd; border:none; height:40pc">
 #include <SoftwareSerial.h>
 SoftwareSerial BT_Serial(3, 2);  // RX, TX
 #define enA 10  //Enable1 L298 Pin enA
@@ -195,7 +195,7 @@ void crashStop(){
   digitalWrite(in4, LOW);  //Left Motor forword Pin
   blah = 0; }
 </pre>
-</style>
+</div>
 
 # <center>Bill of Materials</center>
 
