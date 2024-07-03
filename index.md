@@ -11,10 +11,9 @@
 | Norrel A | Dougherty Valley High School | Mechanical Engineering | Incoming Freshman
 
 
-![Headstone Image](Norrel_A.jpg) 
+<img src="Norrel_A.jpg" width="560" height="315">
 
 # <center>Final Milestone</center> 
-
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/5ZlQGLkiJnY" title="Norrel A. Final Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center> 
 
