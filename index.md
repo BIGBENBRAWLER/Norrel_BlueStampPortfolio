@@ -49,6 +49,11 @@
 # <center>Schematics</center>
 <center><img src="schematic.png" width="800" height="600"> </center>
 
+# <center> Code </center>
+<pre style="background:#fdfdfd; border:none; height:40pc">
+Code Goes Here
+</pre>
+
 
 
 # <center>Bill of Materials</center>
