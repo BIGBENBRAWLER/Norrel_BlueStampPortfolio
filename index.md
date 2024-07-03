@@ -11,7 +11,7 @@
 | Norrel A | Dougherty Valley High School | Mechanical Engineering | Incoming Freshman
 
 
-<center> <img src="Norrel_A.jpg" width="500" height="1000"> </center>
+<center> <img src="Norrel_A.jpg" width="650" height="1000"> </center>
 
 # <center>Final Milestone</center> 
 
