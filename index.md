@@ -49,9 +49,152 @@
 # <center>Schematics</center>
 <center><img src="schematic.png" width="800" height="600"> </center>
 
-# <center> Code </center>
+# <center> Full Car Code (with Modifications) </center>
 <pre style="background:#fdfdfd; border:none; height:40pc">
-Code Goes Here
+#include <SoftwareSerial.h>
+SoftwareSerial BT_Serial(3, 2);  // RX, TX
+#define enA 10  //Enable1 L298 Pin enA
+#define in1 9   //Motor1  L298 Pin in1
+#define in2 8   //Motor1  L298 Pin in1
+#define in3 7   //Motor2  L298 Pin in1
+#define in4 6   //Motor2  L298 Pin in1
+#define enB 5   //Enable2 L298 Pin enB
+#define light 11
+const int trigPin = A5;
+const int echoPin = A4;
+long duration;
+int distance;
+char bt_data;  // variable to receive data from the serial port
+int flag = 1;
+int crash = 0;
+int blah = 0;
+void setup() {         // put your setup code here, to run once
+  Serial.begin(9600);  // start serial communication at 9600bps
+  BT_Serial.begin(9600);
+  pinMode(enA, OUTPUT);      // declare as output for L298 Pin enA
+  pinMode(in1, OUTPUT);      // declare as output for L298 Pin in1
+  pinMode(in2, OUTPUT);      // declare as output for L298 Pin in
+  pinMode(in3, OUTPUT);      // declare as output for L298 Pin in3
+  pinMode(in4, OUTPUT);      // declare as output for L298 Pin in4
+  pinMode(enB, OUTPUT);      // declare as output for L298 Pin enB
+  pinMode(trigPin, OUTPUT);  // Sets the trigPin as an Output
+  pinMode(echoPin, INPUT);   // Sets the echoPin as an Input
+  pinMode(light, OUTPUT);
+  delay(200);
+}
+void loop() {
+  while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
+    bt_data = BT_Serial.read();
+    Serial.println(bt_data);
+  }
+  if (bt_data == 'f' && crash == 0) {
+    forword();
+    flag = 1;
+  }  // if the bt_data is 'f' the DC motor will go forward
+  else if (bt_data == 'b') {
+    backword();
+    flag = 0;
+  }  // if the bt_data is 'b' the motor will Reverse
+  else if (bt_data == 'l' && flag == 0) {
+    backwardsleft();
+  } else if (bt_data == 'r' && flag == 0) {
+    BR();
+  } else if (bt_data == 'l' && flag == 1 && crash == 0) {
+    turnLeft();
+    flag = 1;
+  }  // if the bt_data is 'l' the motor will turn left
+  else if (bt_data == 'r' && flag == 1 && crash == 0) {
+    turnRight();
+    flag = 1;
+  }                                     // if the bt_data is 'r' the motor will turn right
+  else if (bt_data == 's') { regularStop(); }  // if the bt_data 's' the motor will Stop
+  else if (bt_data == 'z') {crash == 1; crashStop(); BT_Serial.end();}
+  if (bt_data == 'k') {digitalWrite(light, HIGH); }
+  else {digitalWrite(light, LOW);}
+  if (bt_data == 'o' && crash == 1) {forword(); blah = 1; }
+  else {blah=0;}
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(echoPin, HIGH, 500000);
+  // Calculating the distance
+  distance = duration * 0.034 / 2;
+  // Prints the distance on the Serial Monitor
+  //Serial.print("Distance: ");
+  Serial.println(distance);
+  if (distance < 30 && distance > 1 && blah==0) {
+    crash = 1;
+    crashStop();
+  } else if (distance > 30) {
+    crash = 0;
+  }
+
+}
+void backwardsleft() {      //backwards then left
+  analogWrite(enA, 50);     // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enB, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, LOW);   //Right Motor forword Pin
+  digitalWrite(in2, HIGH);  //Right Motor backword Pin
+  digitalWrite(in3, HIGH);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);   //Left Motor forword Pin
+}
+void BR() {                 //backwards then right
+  analogWrite(enA, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enB, 50);     // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, LOW);   //Right Motor forword Pin
+  digitalWrite(in2, HIGH);  //Right Motor backword Pin
+  digitalWrite(in3, HIGH);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);   //Left Motor forword Pin
+}
+void forword() {            //forword
+  analogWrite(enB, 200);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enA, 200);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, HIGH);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);   //Right Motor backword Pin
+  digitalWrite(in3, LOW);   //Left Motor backword Pin
+  digitalWrite(in4, HIGH);  //Left Motor forword Pin
+}
+void backword() {           //backword
+  analogWrite(enB, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enA, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, LOW);   //Right Motor forword Pin
+  digitalWrite(in2, HIGH);  //Right Motor backword Pin
+  digitalWrite(in3, HIGH);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);   //Left Motor forword Pin
+}
+void turnRight() {          //turnRight
+  analogWrite(enB, 50);     // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enA, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, HIGH);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);   //Right Motor backword Pin
+  digitalWrite(in3, LOW);   //Left Motor backword Pin
+  digitalWrite(in4, HIGH);  //Left Motor forword Pin
+}
+void turnLeft() {           //turnLeft
+  analogWrite(enA, 50);     // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enB, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, HIGH);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);   //Right Motor backword Pin
+  digitalWrite(in3, LOW);   //Left Motor backword Pin
+  digitalWrite(in4, HIGH);  //Left Motor forword Pin
+}
+void regularStop() {              //stop
+  digitalWrite(in1, LOW);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);  //Right Motor backword Pin
+  digitalWrite(in3, LOW);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);  //Left Motor forword Pin 
+}
+void crashStop(){
+  digitalWrite(in1, LOW);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);  //Right Motor backword Pin
+  digitalWrite(in3, LOW);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);  //Left Motor forword Pin
+  blah = 0;
+}
 </pre>
 
 
