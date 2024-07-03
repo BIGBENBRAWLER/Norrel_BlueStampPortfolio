@@ -13,7 +13,7 @@
 <br>
 
 
-<center> <img src="Norrel_A.jpg" width="650" height="1000" style="border: 10px groove blue;"> </center>
+<center> <img src="Norrel_A.jpg" width="650" height="800" style="border: 10px groove blue;"> </center>
 
 # <center>Final Milestone</center> 
 
