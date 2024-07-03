@@ -193,12 +193,8 @@ void crashStop(){
   digitalWrite(in2, LOW);  //Right Motor backword Pin
   digitalWrite(in3, LOW);  //Left Motor backword Pin
   digitalWrite(in4, LOW);  //Left Motor forword Pin
-  blah = 0;
-}
-
-</pre>
-</pre>
-
+  blah = 0; }
+  </pre>
 
 # <center>Bill of Materials</center>
 
