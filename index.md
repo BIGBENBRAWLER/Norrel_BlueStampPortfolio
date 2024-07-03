@@ -195,8 +195,9 @@ void crashStop(){
   digitalWrite(in4, LOW);  //Left Motor forword Pin
   blah = 0;
 }
-</pre>
 
+</pre>
+<br>
 
 
 # <center>Bill of Materials</center>
