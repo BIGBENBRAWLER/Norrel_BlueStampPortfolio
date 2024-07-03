@@ -17,8 +17,8 @@
 
 # <center>Final Milestone</center> 
 
-<center> <div class="bordered">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5ZlQGLkiJnY" title="Norrel A. Final Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </div> </center> 
+<center> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5ZlQGLkiJnY" title="Norrel A. Final Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </center> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;For my final milestone, I fastened the top acrylic plate onto the chassis to protect the car's internal components. I used Velcro and hot glue to secure the H-bridge motor driver and Arduino UNO microcontroller to the car. I used tape to hold the battery and Bluetooth module in place. To complete my milestone, I made a bracelet out of a Velcro strap and taped my controller onto it. My biggest challenge at BSE was learning how to code with no previous experience. I had to look through multiple online tutorials and find the right one for my setup. Pairing the Bluetooth modules was also a  challenge as at first. I could not communicate with the setup through the serial monitor in the Arduino IDE. After a few more Google searches, I found that I had to remove the wires from the TX and RX pins before pairing the two devices. I also misspelled some of the AT commands I sent to the master module. My biggest triumph at BSE was walking away from this camp with eager to learn more about software and programming robots in general. 
 - What you've accomplished since your previous milestone
