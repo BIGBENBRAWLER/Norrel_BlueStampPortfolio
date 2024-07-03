@@ -47,7 +47,7 @@
 
 
 # <center>Schematics</center>
-<center><img src="schematic.png" width="700" height="600"> </center>
+<center><img src="schematic.png" width="800" height="600"> </center>
 
 
 
