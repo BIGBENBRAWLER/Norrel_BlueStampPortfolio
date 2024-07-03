@@ -9,6 +9,7 @@
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Norrel A | Dougherty Valley High School | Mechanical Engineering | Incoming Freshman
+<br>
 
 
 <center> <img src="Norrel_A.jpg" width="650" height="1000"> </center>
@@ -24,19 +25,19 @@
 - What you hope to learn in the future after everything you've learned at BSE
 
 
-# Second Milestone
+# <center>Second Milestone</center>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DosaU0uHYiI" title="Norrel A. Second Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/DosaU0uHYiI" title="Norrel A. Second Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
-For my second milestone, I've written the code for both the controller and car. The accelorometer now reads the orientation of your hand and sends this data over to the bluetooth module. This data is transported to its counterpart device and read by the Arduino UNO. The code in the microcontroller decides what to do with the inputs it receives. The outputs it sends over to the H-bridge motor driver decides in which direction the wheels spin, and thus, in what direction the car moves. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. 
+&nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. The accelorometer now reads the orientation of your hand and sends this data over to the bluetooth module. This data is transported to its counterpart device and read by the Arduino UNO. The code in the microcontroller decides what to do with the inputs it receives. The outputs it sends over to the H-bridge motor driver decides in which direction the wheels spin, and thus, in what direction the car moves. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. 
 
-# First Milestone
+#<center> First Milestone</center>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/634PnCNzBaU" title="Norrel A. First Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/634PnCNzBaU" title="Norrel A. First Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
-My project is the Gesture Controlled Robot. I chose this project as its unique method of input piqued my interest. I've finished assembling the hardware for both the car and the glove. I also connected the Bluetooth modules together through following a series of tutorials. The first challenge I encountered was a confusing plethora of tutorials offering me different ways to connect the H-bridge motor driver to the Arduino UNO. I ended up rewiring my setup as I decided to follow the original, long-winded tutorial instead. The second challenge I encountered was a lack of power: I needed to add a second power supply to keep all four DC motors running. When I connected the Bluetooth modules together, I had to stray away from the main tutorial once again. I used this <a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Tutorial </a> here, showing me how to configure each module as a master or slave.
+&nbsp;&nbsp;&nbsp;&nbsp;My project is the Gesture Controlled Robot. I chose this project as its unique method of input piqued my interest. I've finished assembling the hardware for both the car and the glove. I also connected the Bluetooth modules together through following a series of tutorials. The first challenge I encountered was a confusing plethora of tutorials offering me different ways to connect the H-bridge motor driver to the Arduino UNO. I ended up rewiring my setup as I decided to follow the original, long-winded tutorial instead. The second challenge I encountered was a lack of power: I needed to add a second power supply to keep all four DC motors running. When I connected the Bluetooth modules together, I had to stray away from the main tutorial once again. I used this <a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> Tutorial </a> here, showing me how to configure each module as a master or slave.
 
 
 
