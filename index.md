@@ -32,7 +32,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. The accelorometer now reads the orientation of your hand and sends this data over to the bluetooth module. This data is transported to its counterpart device and read by the Arduino UNO. The code in the microcontroller decides what to do with the inputs it receives. The outputs it sends over to the H-bridge motor driver decides in which direction the wheels spin, and thus, in what direction the car moves. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. 
 
-#<center> First Milestone</center>
+# <center>First Milestone</center>
 
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/634PnCNzBaU" title="Norrel A. First Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
