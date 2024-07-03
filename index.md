@@ -9,6 +9,7 @@
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Norrel A | Dougherty Valley High School | Mechanical Engineering | Incoming Freshman
+
 <br>
 
 
