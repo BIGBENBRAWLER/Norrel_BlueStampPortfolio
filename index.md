@@ -1,4 +1,4 @@
-# <span size=200> Gesture Controlled Robot </span>
+<center> # <span size=200> Gesture Controlled Robot </span> 
 
 
 <span style="color: olive;"> My project is a small car that can be controlled with the movement of your hand. The user wears a glove which senses movement, giving different inputs based on which gesture you make. These inputs move the car in different directions. </span>
@@ -86,3 +86,4 @@ To watch the BSE tutorial on how to create a portfolio, click here.
   
  
 
+</center>
