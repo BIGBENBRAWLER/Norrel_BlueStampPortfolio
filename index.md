@@ -160,20 +160,10 @@ SoftwareSerial BT_Serial(3, 2); // RX, TX
 #include <Wire.h> // I2C communication library
 const int MPU = 0x68; // I2C address of the MPU6050 accelerometer
 int16_t AcX, AcY, AcZ;
-int BIGBENBRAWLER = 1;
-#define button 7
-#define emergency 11
-#define light 5
-int shell = 0;
-
-//int flag=0;
 
 void setup () {// put your setup code here, to run once
 Serial.begin(9600); // start serial communication at 9600bps
 BT_Serial.begin(9600); 
-pinMode(button, INPUT_PULLUP);
-pinMode(emergency, INPUT_PULLUP);
-pinMode(light, OUTPUT);
 // Initialize interface to the MPU6050
 Wire.begin();
 Wire.beginTransmission(MPU);
@@ -187,14 +177,6 @@ delay(500);
 void loop () {
 Read_accelerometer(); // Read MPU6050 accelerometer
 if(AcX<60) {BT_Serial.write('f');}
-int button_state = digitalRead(button);
-if (button_state == 0 && AcX<60) {BT_Serial.write('o'); shell=1; digitalWrite(light, HIGH);}
-if (button_state == 0 && shell == 0) {BT_Serial.write('k'); digitalWrite(light, HIGH);}
-
-if (button_state == 1) {shell=0; digitalWrite(light, LOW);}
-
-int emergency_state = digitalRead(emergency);
-if (emergency_state == 0) {BT_Serial.write('z');}
 if(AcX>130){BT_Serial.write('b');}      
 if(AcY<60){BT_Serial.write('l'); }
 if(AcY>130){BT_Serial.write('r');}
@@ -224,7 +206,7 @@ Serial.println(AcZ);
 }
 ```
 
-The Arduino UNO interprets the incoming characters and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
+The Arduino UNO interprets the incoming characters (F, B, L, R, etc.) and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
 
 
 # <center>First Milestone</center>
