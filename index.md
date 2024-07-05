@@ -23,6 +23,7 @@
 <br>
 <br>
 Ultrasonic Car Code
+
 ```c++
 digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -48,6 +49,7 @@ On the controller board, I added an override button which sends a signal to the 
 <br>
 <br>
 Override Controller Code
+    
 ```c++
 #include <SoftwareSerial.h>
 SoftwwareSerial BT_Serial(3, 2);
@@ -64,6 +66,7 @@ if (button_state == 0 && AcX<60) {BT_Serial.write('o');}
 ```
 <br>
 Override Car Code
+
 ```c++
 void loop() {
    while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
@@ -94,6 +97,7 @@ if (emergency_state == 0) {BT_Serial.write('z');}
 ```
 <br>
 Emergency Stop Car Code
+
 ```c++
 void loop() {
    while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
@@ -156,7 +160,9 @@ void crashStop(){
 <center><img src="schematic.png" width="800" height="600"> </center>
 
 # <center> Full Car Code (with Modifications) </center>
-<pre style="background:#fdfdfd; border:none; height:40pc">
+
+```c++
+
 #include <SoftwareSerial.h>
 SoftwareSerial BT_Serial(3, 2);  // RX, TX
 #define enA 10  //Enable1 L298 Pin enA
@@ -300,7 +306,8 @@ void crashStop(){
   digitalWrite(in3, LOW);  //Left Motor backword Pin
   digitalWrite(in4, LOW);  //Left Motor forword Pin
   blah = 0; }
-</pre>
+
+```
 
 # <center>Bill of Materials</center>
 
