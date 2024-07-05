@@ -27,7 +27,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;For my modification milestone, I altered the turning method of my robot. Instead of rotating in place, it moves similarly to a normal car, turning slightly while moving forward or backward. I accomplished this by changing the speed of one side of the car when the turning signal is sent. The motor driver's ENA and ENB pins are wired to analog-write ports on the Arduino UNO board. Thus, I can give a value between 0 and 255: the motor driver interprets these signals as speed settings, changing the speed of the pin's respective side of the car. Next, I added an ultrasonic sensor to the front of the robot to detect any obstacles in front of it. It does this similar to how bats use echolocation to avoid collision while flying. When an object is detected at a certain distance, LOW signals are sent to all 4 DC motors, stopping the car automatically. 
 <br>
 <br>
-<font size=50>Ultrasonic Car Code</font>
+<strong>Ultrasonic Car Code</strong>
 
 ```c++
 digitalWrite(trigPin, LOW);
@@ -53,7 +53,7 @@ digitalWrite(trigPin, LOW);
 &nbsp;&nbsp;&nbsp;&nbsp;On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
 <br>
 <br>
-<font size=50>Override Controller Code</font>
+<strong>Override Controller Code</strong>
     
 ```c++
 #include <SoftwareSerial.h>
@@ -70,7 +70,7 @@ if (button_state == 0 && AcX<60) {BT_Serial.write('o');}
 }
 ```
 <br>
-<font size=50>Override Car Code</font>
+<strong>Override Car Code</strong>
 
 ```c++
 void loop() {
@@ -85,7 +85,7 @@ void loop() {
 &nbsp;&nbsp;&nbsp;&nbsp;I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
 <br>
 <br>
-<font size=50>Emergency Stop Controller Code</font>
+<strong>Emergency Stop Controller Code</strong>
 ```c++
 #include <SoftwareSerial.h>
 SoftwwareSerial BT_Serial(3, 2);
@@ -101,7 +101,7 @@ if (emergency_state == 0) {BT_Serial.write('z');}
 }
 ```
 <br>
-<font size=50>Emergency Stop Car Code</font>
+<strong>Emergency Stop Car Code</strong>
 
 ```c++
 void loop() {
@@ -168,7 +168,7 @@ What you've accomplished since your previous milestone
 &nbsp;&nbsp;&nbsp;&nbsp;Through the serial monitor, it gives me X, Y, and Z values of degrees. This data is sent to the Arduino NANO board which compares the data to preset limitations to decide what signals to send. The signals are then transmitted through Bluetooth to the module on the car. 
 <br>
 
-<font size=50>Accelerometer Controller Code</font>
+<strong>Accelerometer Controller Code</strong>
 ```c++
 #include <SoftwareSerial.h>
 SoftwareSerial BT_Serial(3, 2); // RX, TX
@@ -222,7 +222,7 @@ Serial.println(AcZ);
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;The Arduino UNO interprets the incoming characters (F, B, L, R, etc.) and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. 
-<font size=50>Car Code</font>
+<strong>Car Code</strong>
 ```c++
 #include <SoftwareSerial.h>
 SoftwareSerial BT_Serial(3, 2);  // RX, TX
