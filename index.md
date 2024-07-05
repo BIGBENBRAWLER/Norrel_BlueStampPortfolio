@@ -19,9 +19,32 @@
 <center> 
 <div style="border: 10px groove blue;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pXhIZNWV_w0" title="Norrel A. Modification" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe> </div> </center>
-&nbsp;&nbsp;&nbsp;&nbsp;For my modification milestone, I altered the turning method of my robot. Instead of rotating in place, it moves similarly to a normal car, turning slightly while moving forward or backward. I accomplished this by changing the speed of one side of the car when the turning signal is sent. The motor driver's ENA and ENB pins are wired to analog-write ports on the Arduino UNO board. Thus, I can give a value between 0 and 255: the motor driver interprets these signals as speed settings, changing the speed of the pin's respective side of the car. Next, I added an ultrasonic sensor to the front of the robot to detect any obstacles in front of it. It does this similar to how bats use echolocation to avoid collision while flying. When an object is detected at a certain distance, LOW signals are sent to all 4 DC motors, stopping the car automatically. On the controller board, I added an override button which sends a singal to the Arduino UNO, activating a function which disables the  stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
+&nbsp;&nbsp;&nbsp;&nbsp;For my modification milestone, I altered the turning method of my robot. Instead of rotating in place, it moves similarly to a normal car, turning slightly while moving forward or backward. I accomplished this by changing the speed of one side of the car when the turning signal is sent. The motor driver's ENA and ENB pins are wired to analog-write ports on the Arduino UNO board. Thus, I can give a value between 0 and 255: the motor driver interprets these signals as speed settings, changing the speed of the pin's respective side of the car. Next, I added an ultrasonic sensor to the front of the robot to detect any obstacles in front of it. It does this similar to how bats use echolocation to avoid collision while flying. When an object is detected at a certain distance, LOW signals are sent to all 4 DC motors, stopping the car automatically. 
 
-<center> <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> </center>
+digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(echoPin, HIGH, 500000);
+  // Calculating the distance
+  distance = duration * 0.034 / 2;
+  // Prints the distance on the Serial Monitor
+  //Serial.print("Distance: ");
+  Serial.println(distance);
+  if (distance < 30 && distance > 1 && blah==0) {
+    crash = 1;
+    crashStop();
+  } else if (distance > 30) {
+    crash = 0;
+  }
+On the controller board, I added an override button which sends a singal to the Arduino UNO, activating a function which disables the  stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
+
+<img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
+<img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
+
 
 
 
