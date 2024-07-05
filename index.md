@@ -299,7 +299,7 @@ void regularStop() {              //stop
 ```
 
 
-The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
+&nbsp;&nbsp;&nbsp;&nbsp;The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
 
 
 # <center>First Milestone</center>
