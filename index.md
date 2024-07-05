@@ -72,8 +72,10 @@ void loop() {
   }
  if (bt_data == 'o' && crash == 1) {forword(); blah = 1; }
   else {blah=0;}
-}
-</pre>
+  }
+  
+  </pre>
+
 I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
 <br>
 <br>
