@@ -42,6 +42,7 @@ digitalWrite(trigPin, LOW);
   }
   </pre>
 On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the  stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
+<br>
 Controller Code
 <pre style="background:#A7AFB2">
 #define button 7
@@ -55,6 +56,7 @@ int button_state = digitalRead(button);
 if (button_state == 0 && AcX<60) {BT_Serial.write('o');}
 }
 </pre>
+<br>
 Car Code
 <pre style="background:#A7AFB2">
  if (bt_data == 'o' && crash == 1) {forword(); blah = 1; }
