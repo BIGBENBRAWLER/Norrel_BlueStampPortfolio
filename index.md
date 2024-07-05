@@ -22,7 +22,7 @@
 
 <center>
 <figure>
-    <img src="Norrel_A(1).jpg" width="650" height="800" style="border: 10px groove blue;"
+    <img src="projectW.jpg" width="650" height="800" style="border: 10px groove blue;"
          alt="Norrel A with Gesture Controlled Robot">
     <figcaption>Norrel A. Holding his Gesture Controlled Robot, circa 2024</figcaption>
 </figure>
