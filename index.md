@@ -222,6 +222,7 @@ Serial.println(AcZ);
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;The Arduino UNO interprets the incoming characters (F, B, L, R, etc.) and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. 
+<br>
 <strong>Car Code</strong>
 ```c++
 #include <SoftwareSerial.h>
