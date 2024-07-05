@@ -49,7 +49,7 @@ On the controller board, I added an override button which sends a signal to the 
 <br>
 Override Controller Code
 <pre style="background:#A7AFB2">
-#include <SoftwareSerial.h>
+# include <SoftwareSerial.h>
 SoftwwareSerial BT_Serial(3, 2);
 #define button 7
 void setup (){
