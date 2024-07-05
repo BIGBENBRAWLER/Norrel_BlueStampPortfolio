@@ -20,6 +20,8 @@
 <div style="border: 10px groove blue;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pXhIZNWV_w0" title="Norrel A. Modification" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe> </div> </center>
 &nbsp;&nbsp;&nbsp;&nbsp;For my modification milestone, I altered the turning method of my robot. Instead of rotating in place, it moves similarly to a normal car, turning slightly while moving forward or backward. I accomplished this by changing the speed of one side of the car when the turning signal is sent. The motor driver's ENA and ENB pins are wired to analog-write ports on the Arduino UNO board. Thus, I can give a value between 0 and 255: the motor driver interprets these signals as speed settings, changing the speed of the pin's respective side of the car. Next, I added an ultrasonic sensor to the front of the robot to detect any obstacles in front of it. It does this similar to how bats use echolocation to avoid collision while flying. When an object is detected at a certain distance, LOW signals are sent to all 4 DC motors, stopping the car automatically. 
+<br>
+Ultrasonic Car Code
 <pre style="background:#A7AFB2">
 digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -41,10 +43,12 @@ digitalWrite(trigPin, LOW);
     crash = 0;
   }
   </pre>
-On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the  stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
+On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
 <br>
-Controller Code
+Override Controller Code
 <pre style="background:#A7AFB2">
+#include <SoftwareSerial.h>
+SoftwwareSerial BT_Serial(3, 2);
 #define button 7
 void setup (){
 Serial.begin(9600);
@@ -57,12 +61,52 @@ if (button_state == 0 && AcX<60) {BT_Serial.write('o');}
 }
 </pre>
 <br>
-Car Code
+Override Car Code
 <pre style="background:#A7AFB2">
+void loop() {
+   while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
+    bt_data = BT_Serial.read();
+    Serial.println(bt_data);
+  }
  if (bt_data == 'o' && crash == 1) {forword(); blah = 1; }
   else {blah=0;}
+}
 </pre>
 I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
+<br>
+Emergency Stop Controller Code
+<pre style="background:#A7AFB2">
+#include <SoftwareSerial.h>
+SoftwwareSerial BT_Serial(3, 2);
+#define emergency 11
+void setup (){
+Serial.begin(9600);
+BT_Serial.begin(9600);
+pinMode(emergency, INPUT_PULLUP);
+}
+void loop(){
+int emergency_state = digitalRead(emergency);
+if (emergency_state == 0) {BT_Serial.write('z');}
+}
+</pre>
+<br>
+Emergency Stop Car Code
+<pre style="background:#A7AFB2">
+void loop() {
+   while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
+    bt_data = BT_Serial.read();
+    Serial.println(bt_data);
+  }
+  else if (bt_data == 'z') {crash == 1; crashStop(); BT_Serial.end();}
+}
+void crashStop(){
+  digitalWrite(in1, LOW);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);  //Right Motor backword Pin
+  digitalWrite(in3, LOW);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);  //Left Motor forword Pin
+  blah = 0;
+}
+</pre>
 
 <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
 <img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
