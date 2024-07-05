@@ -49,7 +49,7 @@ On the controller board, I added an override button which sends a signal to the 
 <br>
 Override Controller Code
 <pre style="background:#A7AFB2">
-# include <SoftwareSerial.h>
+#include <SoftwareSerial.h>
 SoftwwareSerial BT_Serial(3, 2);
 #define button 7
 void setup (){
@@ -72,10 +72,8 @@ void loop() {
   }
  if (bt_data == 'o' && crash == 1) {forword(); blah = 1; }
   else {blah=0;}
-  }
-  
-  </pre>
-
+}
+</pre>
 I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
 <br>
 <br>
@@ -113,11 +111,6 @@ void crashStop(){
 }
 </pre>
 
-<figure>
-    <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;
-         alt="L298N Motor Driver">
-    <figcaption>The L298N H-Bridge Motor Driver used to control the four DC motors.</figcaption>
-</figure>
 <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
 <img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
 
