@@ -1,4 +1,4 @@
-l# <center> <font size=300> Gesture Controlled Robot </font> </center> 
+# <center> <font size=300> Gesture Controlled Robot </font> </center> 
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;My project is a small car that can be controlled with the movement of your hand. The user holds a board with an accelerometer, sensing tilt in 3 axes. Through Bluetooth, different signals are sent to the car, and based on these different inputs, the motor driver is given different amounts of power. The DC motors spin and move the car in different directions. 
@@ -151,13 +151,12 @@ void crashStop(){
 
 &nbsp;&nbsp;&nbsp;&nbsp;My project is the Gesture Controlled Robot. I chose this project as its unique method of input piqued my interest. I've finished assembling the hardware for both the car and the glove. I also connected the Bluetooth modules together through following a series of tutorials. The first challenge I encountered was a confusing plethora of tutorials offering me different ways to connect the H-bridge motor driver to the Arduino UNO. I ended up rewiring my setup as I decided to follow the original, long-winded tutorial instead. The second challenge I encountered was a lack of power: I needed to add a second power supply to keep all four DC motors running. When I connected the Bluetooth modules together, I had to stray away from the main tutorial once again. I used this <a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> tutorial </a> here, showing me how to configure each module as a master or slave.
 
-<img src="bluetooth.jpg" width="737" height="430" style="border: 5px groove gray;"> 
-<figure>
+<center> <figure>
     <img src="bluetooth.jpg" width="737" height="430" style="border: 5px groove gray;"
          alt="HC-05 Bluetooth Module">
     <figcaption>HC-05 Bluetooth Module</figcaption>
 </figure>
-
+</center>
 
 
 # <center>Schematics</center>
