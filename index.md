@@ -129,7 +129,9 @@ void crashStop(){
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5ZlQGLkiJnY" title="Norrel A. Final Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></center> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;For my final milestone, I fastened the top acrylic plate onto the chassis to protect the car's internal components. I used Velcro and hot glue to secure the H-bridge motor driver and Arduino UNO microcontroller to the car. I used tape to hold the battery and Bluetooth module in place. To complete my milestone, I made a bracelet out of a Velcro strap and taped my controller onto it. My biggest challenge at BSE was learning how to code with no previous experience. I had to look through multiple online tutorials and find the right one for my setup. Pairing the Bluetooth modules was also a  challenge as at first. I could not communicate with the setup through the serial monitor in the Arduino IDE. After a few more Google searches, I found that I had to remove the wires from the TX and RX pins before pairing the two devices. I also misspelled some of the AT commands I sent to the master module. My biggest triumph at BSE was walking away from this camp with eager to learn more about software and programming robots in general. Throughout my time at this camp, I've gained experience in soldering, programming, and troubleshooting. 
-<!--- What you've accomplished since your previous milestone
+
+<!--- 
+What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE
@@ -143,13 +145,87 @@ void crashStop(){
 <center><div style="border: 10px groove blue;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DosaU0uHYiI" title="Norrel A. Second Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></center>
 
-&nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. For the controller, I added an accelerometer which reads the orientation of the board. Through the serial monitor, it gives me X, Y, and Z values of degrees. This data is sent to the Arduino NANO board which compares the data to preset limitations to decide what signals to send. The signals are then transmitted through Bluetooth to the module on the car. The Arduino UNO interprets the incoming characters and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
+&nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. For the controller, I added an accelerometer which reads the orientation of the board. 
 <center> <figure>
     <img src="acc.jpg" width="500" height="500" style="border: 5px groove gray;"
          alt="MPU6050 Accelerometer">
     <figcaption>MPU6050 Accelerometer</figcaption>
 </figure>
 </center>
+Through the serial monitor, it gives me X, Y, and Z values of degrees. This data is sent to the Arduino NANO board which compares the data to preset limitations to decide what signals to send. The signals are then transmitted through Bluetooth to the module on the car. 
+
+```c++
+#include <SoftwareSerial.h>
+SoftwareSerial BT_Serial(3, 2); // RX, TX
+#include <Wire.h> // I2C communication library
+const int MPU = 0x68; // I2C address of the MPU6050 accelerometer
+int16_t AcX, AcY, AcZ;
+int BIGBENBRAWLER = 1;
+#define button 7
+#define emergency 11
+#define light 5
+int shell = 0;
+
+//int flag=0;
+
+void setup () {// put your setup code here, to run once
+Serial.begin(9600); // start serial communication at 9600bps
+BT_Serial.begin(9600); 
+pinMode(button, INPUT_PULLUP);
+pinMode(emergency, INPUT_PULLUP);
+pinMode(light, OUTPUT);
+// Initialize interface to the MPU6050
+Wire.begin();
+Wire.beginTransmission(MPU);
+Wire.write(0x6B);
+Wire.write(0);
+Wire.endTransmission(true);
+
+delay(500); 
+}
+
+void loop () {
+Read_accelerometer(); // Read MPU6050 accelerometer
+if(AcX<60) {BT_Serial.write('f');}
+int button_state = digitalRead(button);
+if (button_state == 0 && AcX<60) {BT_Serial.write('o'); shell=1; digitalWrite(light, HIGH);}
+if (button_state == 0 && shell == 0) {BT_Serial.write('k'); digitalWrite(light, HIGH);}
+
+if (button_state == 1) {shell=0; digitalWrite(light, LOW);}
+
+int emergency_state = digitalRead(emergency);
+if (emergency_state == 0) {BT_Serial.write('z');}
+if(AcX>130){BT_Serial.write('b');}      
+if(AcY<60){BT_Serial.write('l'); }
+if(AcY>130){BT_Serial.write('r');}
+if((AcX>70)&&(AcX<120)&&(AcY>70)&&(AcY<120)){BT_Serial.write('s'); }
+}
+
+void Read_accelerometer(){
+      // Read the accelerometer data
+Wire.beginTransmission(MPU);
+Wire.write(0x3B); // Start with register 0x3B (ACCEL_XOUT_H)
+Wire.endTransmission(false);
+Wire.requestFrom(MPU, 6, true); // Read 6 registers total, each axis value is stored in 2 registers
+
+AcX = Wire.read() << 8 | Wire.read(); // X-axis value
+AcY = Wire.read() << 8 | Wire.read(); // Y-axis value
+AcZ = Wire.read() << 8 | Wire.read(); // Z-axis value
+
+AcX = map(AcX, -17000, 17000, 0, 180);
+AcY = map(AcY, -17000, 17000, 0, 180);
+AcZ = map(AcZ, -17000, 17000, 0, 180);
+
+Serial.print(AcX);
+Serial.print("\t");
+Serial.print(AcY);
+Serial.print("\t");
+Serial.println(AcZ); 
+}
+```
+
+The Arduino UNO interprets the incoming characters and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
+
 
 # <center>First Milestone</center>
 
