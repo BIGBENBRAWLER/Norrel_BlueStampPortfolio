@@ -120,8 +120,16 @@ void crashStop(){
 }
 ```
 
-<img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
-<img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
+<figure>
+    <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
+         alt="L298N Motor Driver">
+    <figcaption>L298N Motor Driver</figcaption>
+</figure>
+<figure>
+    <img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
+         alt="Ultrasonic Sensor Diagram">
+    <figcaption>Ultrasonic Sensor Diagram</figcaption>
+</figure>
 
 
 
