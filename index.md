@@ -111,6 +111,11 @@ void crashStop(){
 }
 </pre>
 
+<figure>
+    <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;
+         alt="L298N Motor Driver">
+    <figcaption>The L298N H-Bridge Motor Driver used to control the four DC motors.</figcaption>
+</figure>
 <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
 <img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
 
