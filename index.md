@@ -41,7 +41,26 @@ digitalWrite(trigPin, LOW);
     crash = 0;
   }
   </pre>
-On the controller board, I added an override button which sends a singal to the Arduino UNO, activating a function which disables the  stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
+On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the  stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
+Controller Code
+<pre style="background:#A7AFB2">
+#define button 7
+void setup (){
+Serial.begin(9600);
+BT_Serial.begin(9600);
+pinMode(button, INPUT_PULLUP);
+}
+void loop(){
+int button_state = digitalRead(button);
+if (button_state == 0 && AcX<60) {BT_Serial.write('o');}
+}
+</pre>
+Car Code
+<pre style="background:#A7AFB2">
+ if (bt_data == 'o' && crash == 1) {forword(); blah = 1; }
+  else {blah=0;}
+</pre>
+I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
 
 <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
 <img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
