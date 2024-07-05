@@ -20,7 +20,7 @@
 <div style="border: 10px groove blue;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pXhIZNWV_w0" title="Norrel A. Modification" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe> </div> </center>
 &nbsp;&nbsp;&nbsp;&nbsp;For my modification milestone, I altered the turning method of my robot. Instead of rotating in place, it moves similarly to a normal car, turning slightly while moving forward or backward. I accomplished this by changing the speed of one side of the car when the turning signal is sent. The motor driver's ENA and ENB pins are wired to analog-write ports on the Arduino UNO board. Thus, I can give a value between 0 and 255: the motor driver interprets these signals as speed settings, changing the speed of the pin's respective side of the car. Next, I added an ultrasonic sensor to the front of the robot to detect any obstacles in front of it. It does this similar to how bats use echolocation to avoid collision while flying. When an object is detected at a certain distance, LOW signals are sent to all 4 DC motors, stopping the car automatically. 
-<pre style="background: white">
+<pre style="background:#A7AFB2">
 digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   // Sets the trigPin on HIGH state for 10 micro seconds
