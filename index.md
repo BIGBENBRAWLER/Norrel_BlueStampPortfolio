@@ -144,6 +144,12 @@ void crashStop(){
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DosaU0uHYiI" title="Norrel A. Second Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></center>
 
 &nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. For the controller, I added an accelerometer which reads the orientation of the board. Through the serial monitor, it gives me X, Y, and Z values of degrees. This data is sent to the Arduino NANO board which compares the data to preset limitations to decide what signals to send. The signals are then transmitted through Bluetooth to the module on the car. The Arduino UNO interprets the incoming characters and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
+<center> <figure>
+    <img src="acc.jpg" width="737" height="430" style="border: 5px groove gray;"
+         alt="MPU6050 Accelerometer">
+    <figcaption>MPU6050 Accelerometer</figcaption>
+</figure>
+</center>
 
 # <center>First Milestone</center>
 
