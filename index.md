@@ -12,8 +12,13 @@
 
 <br>
 
-
-<center> <img src="Norrel_A.jpg" width="650" height="800" style="border: 10px groove blue;"> </center>
+<center>
+<figure>
+    <img src="Norrel_A.jpg" width="650" height="800" style="border: 10px groove blue;"
+         alt="Norrel A">
+    <figcaption>Norrel Aguirre Holding a PCB Board, circa 2024</figcaption>
+</figure>
+</center>
 
 # <center>Modification Milestone</center>
 <center> 
