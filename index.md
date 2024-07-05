@@ -1,7 +1,7 @@
 # <center> <font size=300> Gesture Controlled Robot </font> </center> 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;My project is a small car that can be controlled with the movement of your hand. The user wears a glove which senses movement, giving different inputs based on which gesture you make. These inputs move the car in different directions. 
+&nbsp;&nbsp;&nbsp;&nbsp;My project is a small car that can be controlled with the movement of your hand. The user holds a board with an accelerometer, sensing tilt in 3 axes. Through Bluetooth, different signals are sent to the car, and based on these different inputs, the motor driver is given different amounts of power. The DC motors spin and move the car in different directions. 
 
 <!---Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!-->
 
