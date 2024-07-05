@@ -45,7 +45,7 @@ digitalWrite(trigPin, LOW);
     crash = 0;
   }
 ```
-On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
+&nbsp;&nbsp;&nbsp;&nbsp;On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
 <br>
 <br>
 Override Controller Code
@@ -77,7 +77,7 @@ void loop() {
   else {blah=0;}
 }
 ```
-I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
+&nbsp;&nbsp;&nbsp;&nbsp;I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
 <br>
 <br>
 Emergency Stop Controller Code
@@ -152,7 +152,7 @@ What you've accomplished since your previous milestone
     <figcaption>MPU6050 Accelerometer</figcaption>
 </figure>
 </center>
-Through the serial monitor, it gives me X, Y, and Z values of degrees. This data is sent to the Arduino NANO board which compares the data to preset limitations to decide what signals to send. The signals are then transmitted through Bluetooth to the module on the car. 
+&nbsp;&nbsp;&nbsp;&nbsp;Through the serial monitor, it gives me X, Y, and Z values of degrees. This data is sent to the Arduino NANO board which compares the data to preset limitations to decide what signals to send. The signals are then transmitted through Bluetooth to the module on the car. 
 
 ```c++
 #include <SoftwareSerial.h>
@@ -206,7 +206,7 @@ Serial.println(AcZ);
 }
 ```
 
-The Arduino UNO interprets the incoming characters (F, B, L, R, etc.) and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
+&nbsp;&nbsp;&nbsp;&nbsp;The Arduino UNO interprets the incoming characters (F, B, L, R, etc.) and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
 
 
 # <center>First Milestone</center>
