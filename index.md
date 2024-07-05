@@ -23,7 +23,7 @@
 <br>
 <br>
 Ultrasonic Car Code
-<pre style="background:#A7AFB2">
+```C++
 digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   // Sets the trigPin on HIGH state for 10 micro seconds
@@ -43,12 +43,12 @@ digitalWrite(trigPin, LOW);
   } else if (distance > 30) {
     crash = 0;
   }
-  </pre>
+    ```
 On the controller board, I added an override button which sends a signal to the Arduino UNO, activating a function which disables the stopping feature of the robot. It does this by changing the state of a specific integer from 0 to 1, disabling a prerequisite for the stopping feature to activate. 
 <br>
 <br>
 Override Controller Code
-<pre style="background:#A7AFB2">
+```C++
 #include <SoftwareSerial.h>
 SoftwwareSerial BT_Serial(3, 2);
 #define button 7
@@ -61,10 +61,10 @@ void loop(){
 int button_state = digitalRead(button);
 if (button_state == 0 && AcX<60) {BT_Serial.write('o');}
 }
-</pre>
+```
 <br>
 Override Car Code
-<pre style="background:#A7AFB2">
+```C++
 void loop() {
    while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
     bt_data = BT_Serial.read();
@@ -73,12 +73,12 @@ void loop() {
  if (bt_data == 'o' && crash == 1) {forword(); blah = 1; }
   else {blah=0;}
 }
-</pre>
+```
 I installed a second button, which activates an emergency stop when held. Immediately, a stop signal is sent to the robot, and Bluetooth communication between the two devices is terminated indefinitely until both are reset. 
 <br>
 <br>
 Emergency Stop Controller Code
-<pre style="background:#A7AFB2">
+```C++
 #include <SoftwareSerial.h>
 SoftwwareSerial BT_Serial(3, 2);
 #define emergency 11
@@ -91,10 +91,10 @@ void loop(){
 int emergency_state = digitalRead(emergency);
 if (emergency_state == 0) {BT_Serial.write('z');}
 }
-</pre>
+```
 <br>
 Emergency Stop Car Code
-<pre style="background:#A7AFB2">
+```C++
 void loop() {
    while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
     bt_data = BT_Serial.read();
@@ -109,7 +109,7 @@ void crashStop(){
   digitalWrite(in4, LOW);  //Left Motor forword Pin
   blah = 0;
 }
-</pre>
+```
 
 <img src="motordriver.jpg" width="300" height="200" style="border: 5px groove gray;"> 
 <img src="fig1.png" width="300" height="200" style="border: 5px groove gray;"> 
