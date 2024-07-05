@@ -158,7 +158,9 @@ What you've accomplished since your previous milestone
 </figure>
 </center>
 &nbsp;&nbsp;&nbsp;&nbsp;Through the serial monitor, it gives me X, Y, and Z values of degrees. This data is sent to the Arduino NANO board which compares the data to preset limitations to decide what signals to send. The signals are then transmitted through Bluetooth to the module on the car. 
+<br>
 
+<font size=100>Accelerometer Controller Code</font>
 ```c++
 #include <SoftwareSerial.h>
 SoftwareSerial BT_Serial(3, 2); // RX, TX
@@ -211,7 +213,93 @@ Serial.println(AcZ);
 }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;The Arduino UNO interprets the incoming characters (F, B, L, R, etc.) and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
+&nbsp;&nbsp;&nbsp;&nbsp;The Arduino UNO interprets the incoming characters (F, B, L, R, etc.) and controls the L298N motor driver based on those inputs. In turn, the motor driver controls the speed and direction of all four DC motors. 
+<font size=100>Car Code</font>
+```c++
+#include <SoftwareSerial.h>
+SoftwareSerial BT_Serial(3, 2);  // RX, TX
+#define enA 10  //Enable1 L298 Pin enA
+#define in1 9   //Motor1  L298 Pin in1
+#define in2 8   //Motor1  L298 Pin in1
+#define in3 7   //Motor2  L298 Pin in1
+#define in4 6   //Motor2  L298 Pin in1
+#define enB 5   //Enable2 L298 Pin enB
+char bt_data;  // variable to receive data from the serial port
+void setup() {         // put your setup code here, to run once
+  Serial.begin(9600);  // start serial communication at 9600bps
+  BT_Serial.begin(9600);
+  pinMode(enA, OUTPUT);      // declare as output for L298 Pin enA
+  pinMode(in1, OUTPUT);      // declare as output for L298 Pin in1
+  pinMode(in2, OUTPUT);      // declare as output for L298 Pin in
+  pinMode(in3, OUTPUT);      // declare as output for L298 Pin in3
+  pinMode(in4, OUTPUT);      // declare as output for L298 Pin in4
+  pinMode(enB, OUTPUT);      // declare as output for L298 Pin enB
+  delay(200);
+}
+void loop() {
+  while (BT_Serial.available()) {  //if some date is sent, reads it and saves in state
+    bt_data = BT_Serial.read();
+    Serial.println(bt_data);
+  }
+  if (bt_data == 'f') {
+    forword();
+  }  
+  else if (bt_data == 'b') {
+    backword();
+  }  
+  
+  } else if (bt_data == 'l') {
+    turnLeft();
+  }  
+  else if (bt_data == 'r') {
+    turnRight();
+}
+  else if (bt_data == 's') { regularStop(); }  
+  
+}
+
+void forword() {            //forword
+  analogWrite(enB, 200);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enA, 200);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, HIGH);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);   //Right Motor backword Pin
+  digitalWrite(in3, LOW);   //Left Motor backword Pin
+  digitalWrite(in4, HIGH);  //Left Motor forword Pin
+}
+void backword() {           //backword
+  analogWrite(enB, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enA, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, LOW);   //Right Motor forword Pin
+  digitalWrite(in2, HIGH);  //Right Motor backword Pin
+  digitalWrite(in3, HIGH);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);   //Left Motor forword Pin
+}
+void turnRight() {          //turnRight
+  analogWrite(enB, 50);     // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enA, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, HIGH);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);   //Right Motor backword Pin
+  digitalWrite(in3, LOW);   //Left Motor backword Pin
+  digitalWrite(in4, HIGH);  //Left Motor forword Pin
+}
+void turnLeft() {           //turnLeft
+  analogWrite(enA, 50);     // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  analogWrite(enB, 250);    // Write The Duty Cycle 0 to 255 Enable Pin A for Motor1 Speed
+  digitalWrite(in1, HIGH);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);   //Right Motor backword Pin
+  digitalWrite(in3, LOW);   //Left Motor backword Pin
+  digitalWrite(in4, HIGH);  //Left Motor forword Pin
+}
+void regularStop() {              //stop
+  digitalWrite(in1, LOW);  //Right Motor forword Pin
+  digitalWrite(in2, LOW);  //Right Motor backword Pin
+  digitalWrite(in3, LOW);  //Left Motor backword Pin
+  digitalWrite(in4, LOW);  //Left Motor forword Pin 
+}
+```
+
+
+The first mistake I made was confusing the polarity of the motors, as because of this, my wheels were spinning inwards. I believed that the error was due to my code, and so, I spent the next hour looking over it, tweaking the HIGH and LOW digitalwrite values. Interestingly, my motors either continued to spin incorrectly or failed to spin at all. At last, I decided to rewire the motors, solving the problem. 
 
 
 # <center>First Milestone</center>
