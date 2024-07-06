@@ -168,7 +168,7 @@ What you've accomplished since your previous milestone
 <center><div style="border: 10px groove blue;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DosaU0uHYiI" title="Norrel A. Second Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></center>
 
-&nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. For the controller, I added an accelerometer which reads the orientation of the board. 
+&nbsp;&nbsp;&nbsp;&nbsp;For my second milestone, I've written the code for both the controller and car. For the controller, I added an accelerometer which reads the orientation of the board. Specifically, this accelerometer is a MEMS (microelectromechanical) accelerometer. Within the chip, there is a small mass suspended by springs, free to move around. When the board moves in any direction, the mass's change in position is recorded through a change in capacitance. This <a href="https://www.youtube.com/watch?v=MsyqsOUBQuU&t=285s"> video </a> will explain in furter detail how these chips work. 
 <center> <figure>
     <img src="acc.jpg" width="500" height="500" style="border: 5px groove gray;"
          alt="MPU6050 Accelerometer">
