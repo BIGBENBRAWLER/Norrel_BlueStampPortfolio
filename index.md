@@ -331,17 +331,69 @@ void regularStop() {              //stop
 &nbsp;&nbsp;&nbsp;&nbsp;My project is the Gesture Controlled Robot. I chose this project as its unique method of input piqued my interest. I've finished assembling the hardware for both the car and the glove. I also connected the Bluetooth modules together through following a series of tutorials. The first challenge I encountered was a confusing plethora of tutorials offering me different ways to connect the H-bridge motor driver to the Arduino UNO. I ended up rewiring my setup as I decided to follow the original, long-winded tutorial instead. The second challenge I encountered was a lack of power: I needed to add a second power supply to keep all four DC motors running. When I connected the Bluetooth modules together, I had to stray away from the main tutorial once again. I used this <a href="https://www.instructables.com/Arduino-Two-Way-Communication-Via-Bluetooth-HC-05/"> tutorial </a> here, showing me how to configure each module as a master or slave. 
 <br>
 <br>
-<strong>Pairing Master Code</strong>
-```c++
-code here
-```
-<br>
-<br>
 <strong>Pairing Slave Code</strong>
+```c++
+#include <SoftwareSerial.h>
+
+SoftwareSerial Bluetooth(3,2);
+void setup (){
+  Serial.begin(9600);
+  Bluetooth.begin(38400);
+}
+
+void loop() 
+{
+ //Read from HC-05 and send data to the Arduino Serial Monitor
+ if (Bluetooth.available()){
+ Serial.write(Bluetooth.read());
+}
+ //Read from Arduino Serial Monitor and send it to the HC-05
+ if (Serial.available()){
+  Bluetooth.write(Serial.read());
+ }
+}
+```
+<strong>Serial Monitor Commands</strong>
+AT | OK | Check if the HC-05 is in AT Command mode
+<br>
+AT+ROLE=0 | OK | This makes the HC=05 a Slave
+<br>
+AT+ADDR? | <addr>, OK | Displays the HC-05's address
+<br>
+<br>
+<strong>Pairing Master Code</strong>
 
 ```c++
-code here
+#include <SoftwareSerial.h>
+
+SoftwareSerial Bluetooth(3,2);
+void setup (){
+  Serial.begin(9600);
+  Bluetooth.begin(38400);
+}
+
+void loop() 
+{
+ //Read from HC-05 and send data to the Arduino Serial Monitor
+ if (Bluetooth.available()){
+ Serial.write(Bluetooth.read());
+}
+ //Read from Arduino Serial Monitor and send it to the HC-05
+ if (Serial.available()){
+  Bluetooth.write(Serial.read());
+ }
+}
+
 ```
+<strong>Serial Monitor Commands</strong>
+AT | OK | Check if the HC-05 is in AT Command mode
+<br>
+AT+ROLE=1 | OK | This makes the HC-05 a Master
+<br>
+AT+CMODE=0 | OK | This allows the HC-05 connect to a specified address
+<br>
+AT+BIND=00<addr> | OK | When the HC-05 turns on, it will look for this address
+<br>
 <center> <figure>
     <img src="bluetooth.jpg" width="737" height="430" style="border: 5px groove gray;"
          alt="HC-05 Bluetooth Module">
