@@ -354,6 +354,7 @@ void loop()
 }
 ```
 <strong>Serial Monitor Commands</strong>
+<br>
 AT | OK | Check if the HC-05 is in AT Command mode
 <br>
 AT+ROLE=0 | OK | This makes the HC=05 a Slave
@@ -386,6 +387,7 @@ void loop()
 
 ```
 <strong>Serial Monitor Commands</strong>
+<br>
 AT | OK | Check if the HC-05 is in AT Command mode
 <br>
 AT+ROLE=1 | OK | This makes the HC-05 a Master
