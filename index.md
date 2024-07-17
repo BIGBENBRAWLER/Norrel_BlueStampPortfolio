@@ -406,6 +406,9 @@ AT+BIND=00<addr> | OK | When the HC-05 turns on, it will look for this address
 
 # <center>Schematics</center>
 <center><img src="schematic.png" width="800" height="600"> </center>
+<center><img src="image_2024-07-17_161403660.png" width="400" height="600"> </center>
+
+
 
 # <center> Full Car Code (with Modifications) </center>
 
